@@ -358,7 +358,7 @@ Once deployed:
 - **Frontend**: `https://your-frontend-domain.com`
 
 > Note: Backend APIs are currently configured for local execution.
-> The frontend is deployed to demonstrate UI, architecture, and data flow.
+> When backend APIs are unavailable, the frontend displays demo data to showcase UI and user flow.
 ---
 
 ## 🛠️ Troubleshooting

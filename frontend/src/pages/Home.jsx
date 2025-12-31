@@ -2,9 +2,26 @@ import React, { useEffect, useState } from "react";
 import { fetchArticles } from "../services/api";
 import { Link } from "react-router-dom";
 
+
+
 function Home() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const demoArticles = [
+  {
+    _id: "1",
+    title: "Chatbots Magic: Beginner’s Guidebook",
+    isUpdated: true
+  },
+  {
+    _id: "2",
+    title: "Understanding AI Pipelines",
+    isUpdated: false
+  }
+];
+
+
 
   useEffect(() => {
     fetchArticles()
@@ -12,7 +29,11 @@ function Home() {
         setArticles(res.data);
         setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch(() => {
+  setArticles(demoArticles);
+  setLoading(false);
+});
+
   }, []);
 
   if (loading) return <p className="container">Loading articles...</p>;
